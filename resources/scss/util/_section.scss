@@ -1,0 +1,56 @@
+@use "../abstracts/index.scss" as *;
+@use "../components/index.scss" as *;
+
+#about {
+    @apply justify-end mr-4;
+    .card {
+        @apply h-[30rem] md:h-auto;
+        @extend .card_jumbutron;
+        .card-body {
+            blockquote {
+                @apply text-right text-xl leading-10 pl-20
+            }
+        }
+    }
+}
+
+#book {
+    .card_mini_img_left { 
+        @extend .card_mini_img_left;
+        p {
+            @apply mb-4;
+        }
+        button {
+            @apply flex justify-end absolute bottom-0 right-0;
+        }
+        figcaption {
+            i.material-icons {
+                @apply text-4xl text-yellow-700;
+            }
+        }
+    }
+}
+
+#order {
+    // content: "";
+    // position: absolute !important;
+    // width: 1200px;
+    // height: 100%;
+    // background: url(/images/book-bg.png) no-repeat;
+    // background-size: 100%;
+    // background-position: center;
+    // z-index: 1;
+    // @apply before:block before:bg-second-hero-image before:absolute before:w-[1200px] before:h-full before:bg-contain before:bg-no-repeat before:bg-center before:z-10
+}
+
+#contact {
+    // content: "";
+    // position: absolute !important;
+    // width: 1200px;
+    // height: 100%;
+    // background: url(/images/book-bg.png) no-repeat;
+    // background-size: 100%;
+    // background-position: center;
+    // z-index: 1;
+    // @apply before:block before:bg-second-hero-image before:absolute before:w-[1200px] before:h-full before:bg-contain before:bg-no-repeat before:bg-center before:z-10
+}

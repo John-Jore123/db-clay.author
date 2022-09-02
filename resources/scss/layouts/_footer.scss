@@ -1,0 +1,11 @@
+footer {
+    @apply w-full h-full flex flex-col justify-end items-center pb-4;
+
+    img {
+        @apply mx-0 sm:mx-auto
+    }
+    
+    p {
+        @apply text-[8px] text-white text-center inline-block
+    }
+}

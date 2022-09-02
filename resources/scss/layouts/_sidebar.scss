@@ -1,0 +1,151 @@
+/*--------------------------------------------------------------
+    # NAVBAR
+--------------------------------------------------------------*/
+// HEADER_TOP CSS
+// header {
+//     transition: transform 0.3s ease, visibility 0s 0.3s linear;
+//     transform: translate3d(0, 0, 0);
+//     &.header_hide {
+//         transform: translate3d(0, -100%, 0);
+//     }
+// }
+// #mobile_navbar_list {
+//     // transition: 1s cubic-bezier(0.65, 0.05, 0.36, 1);
+//     animation: navigationAnim 1s cubic-bezier(0.65, 0.05, 0.36, 1);
+// }
+
+// SIDEBAR_LEFT CSS
+header {
+    @apply h-full fixed top-0 -left-60 bottom-0 bg-dark-600/70 flex items-center flex-col z-50 overflow-y-auto;
+    transition: all 1s cubic-bezier(.23,1,.32,1) !important;
+    &.active-left-0 {
+        @apply left-0
+    }
+    .nav-menu {
+        #name_logo {
+            @apply mx-auto py-12
+        }
+        & * {
+            @apply m-0 p-0;
+        }
+        & > ul {
+            @apply space-y-0
+        }
+        & > ul > li {
+            @apply relative whitespace-nowrap border-dark-600/70 border-t-2 last:border-b-2
+        }
+    }
+}
+.nav-menu {
+    & a,
+    & a:focus {
+        @apply flex items-center w-full h-full relative text-white p-4 font-semibold overflow-hidden opacity-50;
+        transition: 0.3s;
+        @apply before:absolute before:w-full before:h-full before:top-0 before:left-0 before:-z-10;
+        span {
+            @apply pl-4 pr-7
+        }
+        // &::before {
+        //     content: "";
+        // }
+    }
+    & li,
+    & a.active,
+    & a.active:focus,
+    & li > a.active {
+        @apply opacity-100 w-full dark:bg-dark-600;
+        // span {
+        //     @apply block
+        // }
+        &::before { 
+            background: #168e2c;
+            width: 100%;
+            transition: all .7s ease;
+        }
+    }
+    & a:hover,
+    & li:hover {
+        @apply opacity-100;
+        span {
+            @apply block 
+        }
+    }
+}
+// @media (min-width: 992px) {
+    // .nav-menu {
+    //     & a,
+    //     & a:focus {
+    //         @apply w-16;
+    //         span {
+    //             @apply hidden
+    //         }
+    //     }
+    // }
+// }
+
+/*--------------------------------------------------------------
+    # HAMBURGER
+--------------------------------------------------------------*/
+// HAMBURGER ONE CSS
+.hamburger-navbar-icon-toggler {
+    @apply fixed top-4 left-4 z-50;
+    transition: all 1s cubic-bezier(.23,1,.32,1) !important;
+    &.is-active {
+        @apply left-40;
+        transition: all 1s cubic-bezier(.23,1,.32,1);
+    }
+}
+.hamburger-inner,
+.hamburger-inner::before, 
+.hamburger-inner::after {
+    background: #16d239 !important
+}
+.hamburger.is-active .hamburger-inner,
+.hamburger.is-active .hamburger-inner::before,
+.hamburger.is-active .hamburger-inner::after {
+    background: #de4d4d !important
+}
+
+// HAMBURGER ONE CSS
+// #top {
+//     @apply top-[16px] left-[10px]
+// }
+// #bottom {
+//     @apply top-[43px] left-[10px]
+// }
+// path, line {
+//     @apply stroke-black dark:stroke-white;
+//     stroke-linecap: round;
+// }
+// #top, #bottom {
+//     transform-origin: 34px 2px;
+//     transform: rotate( 0deg ); // to prevent pixelatedness
+//     transition: all 1s * .5 cubic-bezier(.8, -1.1, .5, 1.9); // x to = animation
+// }
+// #circle {
+//     stroke-dasharray: 1 100 32 300; // 32 is the hamburger size
+//     stroke-dashoffset: 101; // setting up a gap to swipe in from the left
+//     transition: all 1s ease; // - to () animation
+// }
+// // End values (animation done by transitions)
+// .hamburglar.is-open {
+//     // The circle animation is done by changing two things:
+//     // - a new 100px gap is swiped in from the left by changing offset
+//     // - the 'burger' dash is increased from 32px to 190px
+//     border-radius: 32px;
+//     #circle {
+//         stroke-dasharray: 1 100 190 300;
+//         stroke-dashoffset: 1;
+//         stroke-width: 0;
+//     }
+//     // Rotate the top and bottom 'bum' to make a cross, and shift them to
+//     // the right a little bit
+//     #top {
+//         transform: translateX( -4.5px ) rotate( -45deg );
+//         @apply top-[19px] left-[27px] w-9
+//     }
+//     #bottom {
+//         transform: translateX( -4.5px ) rotate( 45deg );
+//         @apply top-[41px] left-[28px] w-9
+//     }
+// }

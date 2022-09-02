@@ -1,0 +1,125 @@
+// // @--Z-INDEXING FUNCTION
+// @function layer($keys...) {
+//     $value: $layer;
+//     @each $key in $keys {
+//         $value: map-get($value, $key);
+//     } 
+//     @return $value;
+// }
+
+// // ========================================== //
+// /// @--COLOR FUNCTION
+// @function color_palette($color, $percentage, $opacity) {
+//     $map: (
+//         base   : $color,
+//         light  : lighten($color, $percentage),
+//         dark   : darken($color, $percentage),
+//         lucent : transparentize($color, $opacity)
+//     );
+//     @return $map;
+// }
+// $colors-map: ();
+// @each $key, $value in $colours {
+//     $map: ();
+//     $map: map-merge($map, ($key: color_palette($value, 20% , 0.5)));
+//     $colors-map: map-merge($colors-map, $map);
+// }
+// @function palette($theme, $tone) {
+//     @if map-has-key($colors-map, $theme) {
+//         $palette: map-get($colors-map, $theme);
+//         @if map-has-key($palette, $tone) {
+//             $tone: map-get($palette, $tone);
+//             @return $tone;
+//         }
+//         @warn "unknown tone `#{$tone}` in color tone";
+//         @return null;
+//     }
+//     @warn "unknown tone `#{$theme}` in palette";
+//     @return null;
+// }
+
+// // ========================================== //
+// // @--FONT STYLE
+// @function font-build($size, $type) {
+//     @if map-has-key($font-build, $size) {
+//         $build: map-get($font-build, $size);
+//         @if map-has-key($build, $type) {
+//             $size: map-get($build, $type);
+//             @return $size;
+//         }
+//         @warn "unknown type `#{$type}` in font-build";
+//         @return null;
+//     }
+//     @warn "unknown type `#{$size}` in font-build";
+//     @return null;
+// }
+// @function font-type($font, $type) {
+//     @if map-keys($font-type) {
+//         @return map-get(map-get($font-type, $font),$type);
+//     }
+//     @warn "unknown font type `#{$type}` under set of `#{$font}` in font-type";
+//     @return null;
+// }
+
+
+// // ======================================================================= //
+
+// /// @--COLOR MIXIN
+// @mixin color_set($color) {
+//     color: $color;
+// }
+
+// // ========================================== //
+// /// @--Z-INDEXING MIXIN
+// @mixin layering($position, $layer) {
+//     $value: layer($layer);
+//     position: $position;
+//     z-index: $value;
+// }
+
+// // ========================================== //
+// /// @--FONT MIXIN
+// @mixin font_set($font, $type) {
+//     $value: font-type(#{$font}, #{$type});
+//     font-family: $value;
+// }
+// @mixin font_build($size, $weight) {
+//     $value-1: font-build(size,#{$size});
+//     $value-2: font-build(thick,#{$weight});
+//     font-size: $value-1;
+//     font-weight: $value-2;
+// }
+// @mixin font($color, $font, $set, $size, $weight, $typecase) {    
+//     @include color_set($color);
+//     @include font_set($font, $set);
+//     @include font_build($size, $weight);
+//     text-transform: $typecase;
+// }
+// @each $name, $font in $display-font {
+//     .display-font-#{$name} {
+//         font-size: $font;
+//     }
+// }
+
+// // ========================================== //
+// /// @--BREAKPOINT MIXIN
+// @mixin media_breakpoint($breakpoints) {
+//     @if map-has-key($breakpoint, $breakpoints) {
+//         $value: map-get($breakpoint, $breakpoints);
+//         @media screen and (max-width: $value) {
+//             @content;
+//         }
+//     }
+//     @warn "Unknown `#{$breakpoints}` in $breakpoint";
+// }
+
+// // ========================================== //
+// /// @--FLEX GLOBAL
+// @mixin flex($type, $wrap, $direction, $justify, $items, $content) {
+//     display: $type;
+//     flex-wrap: $wrap;
+//     flex-direction: $direction;
+//     justify-content: $justify;
+//     align-items: $items;
+//     align-content: $content;
+// }

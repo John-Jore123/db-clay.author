@@ -1,0 +1,23 @@
+.card_jumbutron {
+    @apply bg-dark-600/80 px-12 py-4 w-3/4;
+    .card-body {
+        @apply flex p-0 md:block;
+    }
+}
+
+.card_mini_img_top {
+    @apply px-4 w-96;
+    img {
+        @apply w-auto h-80;
+    }
+    blockquote {
+        @apply p-6 bg-dark-600;
+    }
+}
+
+.card_mini_img_left {
+    @apply p-4 bg-dark-600;
+    // blockquote {
+    //     @apply px-4 flex flex-col items-center justify-center
+    // }
+}
