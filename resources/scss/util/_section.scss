@@ -30,6 +30,21 @@
         }
     }
 }
+#review {
+    .card_mini_img_left { 
+        figcaption {
+            i.material-icons {
+                @apply text-4xl text-yellow-700;
+            }
+        }
+    }
+    .swiper {
+        .swiper-button-next,
+        .swiper-button-prev {
+            @apply text-dark-600;
+        }
+    }
+}
 
 #order {
     // content: "";

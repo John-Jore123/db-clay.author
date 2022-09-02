@@ -6,6 +6,7 @@ use Illuminate\View\Component;
 
 class Order extends Component
 {
+    public array $orderItem = [];
     /**
      * Create a new component instance.
      *
@@ -13,7 +14,23 @@ class Order extends Component
      */
     public function __construct()
     {
-        //https://pageturner.us/bookstore/santos-search-for-glaciers https://pageturner.us/bookstore/green-science-saves-christmas https://pageturner.us/bookstore/
+        $this->orderItem = [
+            [
+                'title' => "Santo's Search for Glaciers",
+                'cover' => url('/images/book/cover-one.jpg'),
+                'href' => 'https://pageturner.us/bookstore/santos-search-for-glaciers'
+            ],
+            [
+                'title' => "Green Science Saves Christmas",
+                'cover' => url('/images/book/cover-two.jpg'),
+                'href' => 'https://pageturner.us/bookstore/green-science-saves-christmas'
+            ],
+            [
+                'title' => "Santo and the Green Magic Trunk",
+                'cover' => url('/images/book/cover-three.jpg'),
+                'href' => 'https://pageturner.us/bookstore/'
+            ]
+        ];
     }
 
     /**

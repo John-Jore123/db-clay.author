@@ -3,6 +3,8 @@ window.$ = window.JQuery = require('jquery')
 const { isEmpty, flatMap } = require('lodash');
 window.Swal = require('Sweetalert2');
 
+import Swiper from 'swiper/bundle';
+import 'swiper/css/bundle';
 
 /*--------------------------------------------------------------
 # ANIMATION
@@ -418,3 +420,18 @@ const regEx_patterns = {
     phone: /^([\d\s\-\+\(\)]*)$/,
     space: /\s+/gi
 }
+
+
+// CAROUSEL
+const swiper = new Swiper('.slider-review', {
+    // slidesPerView: 3,
+    // spaceBetween: 30,
+    // loop: true,
+    slidesPerGroup: 1,
+    centeredSlides: true,
+    loopFillGroupWithBlank: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+});

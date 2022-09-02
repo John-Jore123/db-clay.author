@@ -1,6 +1,16 @@
-<section id="book">
+<x-section-layout id="book"> 
+    @foreach ( $bookItems as $items )
+    <x-util.book-card :description="$items['description']"
+                    :title="$items['title']"
+                    :cover="$items['cover']" 
+                    :id="$items['id']"
+                    :bookID="$items['bookID']" />
+    @endforeach
+</x-section-layout>
+
+{{-- <section id="book">
     <div class="container mx-auto">
-        <div class="flex items-center justify-center -mx-4">
+        <div class="flex items-center justify-center -mx-4"> --}} 
             {{-- @foreach ( $bookItems as $items )
                 <x-util.book-card :description="$items['description']"
                                   :title="$items['title']"
@@ -10,14 +20,14 @@
             @endforeach --}}
 
 
-            <div class="w-4/5 block">
+            {{-- <div class="w-4/5 block">
                 <figure class="flex card_mini_img_left" id="">
                     <img src="{{ mix('images/book/cover-one.jpg') }}" alt="">
                     <div class="relative pl-4 flex flex-col items-center justify-center">
                         <blockquote>
                             In Santos first book, Green Science Saves Christmas, Santo temporarily helped save the North Pole from melting. He restores planet Earth's magical ice. The ice helps control much of our weather on planet Earth. The magical ice that helps give life to all Earth's beings. Santo asked children and their parents to lessen their carbon footprint on the planet. Christmas has passed and winter is almost over in Santos southern home in Antarctica. Santo is looking forward to seeing how the planet is doing. He has been hoping the planet has continued to heal. Santo has been hoping mankind is doing their part in the healing process. The health of our mountain glaciers can tell us if planet Earth is continuing on its warming trend. They are much like the canary in the coal mine that tells us if there is danger in the air that we breathe. Let's visit Santo now and see how our glaciers are doing.
                         </blockquote>
-                        {{-- <figcaption>
+                        <figcaption>
                             <div class="flex">
                                 <i class="material-icons">star</i>
                                 <i class="material-icons">star</i>
@@ -25,15 +35,15 @@
                                 <i class="material-icons">star</i>
                                 <i class="material-icons">star</i>
                             </div>
-                            <blockquote>
+                            <blockquote> 
                                 A great story with unique, original artwork. This is a pleasant departure from your typical children's book.
                             </blockquote>
-                        </figcaption> --}}
+                        </figcaption>
                         <button id=""><i class="material-icons text-white">keyboard_backspace</i></button>
                     </div> 
                 </figure>
                 <button class="bg-white p-4 rounded-full flex items-center mt-4 float-right">Book Reviews &nbsp;<i class="material-icons">remove_red_eye</i></button>
-            </div>
+            </div> --}}
             
 
             {{-- <div class="w-4/5 block">
@@ -88,6 +98,6 @@
                 <button class="bg-white p-4 rounded-full flex items-center mt-4 float-right">Book Reviews &nbsp;<i class="material-icons">remove_red_eye</i></button>
             </div> --}}
 
-        </div>
+        {{-- </div>
     </div>
-</section>
+</section> --}}
